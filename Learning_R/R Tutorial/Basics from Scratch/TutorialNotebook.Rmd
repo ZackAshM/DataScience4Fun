@@ -1,0 +1,85 @@
+---
+title: 'First R Notebook: R Basics'
+output:
+  html_document:
+    df_print: paged
+---
+
+A Note to anyone who is not Zachary Martin: This notebook serves as a great starting tutorial, however it assumes that you are using it in RStudio, hence you should have both R and RStudio installed. Additionally, this notebook is not a stand alone resource - you will need to find other places for the syntax and available functions, packages, etc. Finally, this assumes some programming knowledge, specifically Python - this notebook will not be explaining the difference between strings/characters, floats/numerics, etc.
+
+I don't expect anyone to see or use this other than me, however if you do, I hope it helps!
+
+# Notebook Tutorial
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+For more R notebook syntax, see the [R Notebook Cheatsheet](file:///home/zackashm/DataScience/R%20Tutorial/Basics%20from%20Scratch/rmarkdown-cheatsheet.pdf) (local link).
+
+# R Basics
+
+This notebook follows a similar flow to the [SPS Python Bootcamp Beginner Notebook](https://github.com/ZackAshM/PythonBootcamp/blob/master/PythonBootcampBeginner_Solutions.ipynb).
+
+### 1. Hello World
+
+Print the string "Hello World"
+
+```{r, collapse=TRUE}
+print("Hello World")
+```
+
+For quick documentation of a function, use the `help()` function or more simply the syntax `?functionname`.
+
+```{r}
+# This is a comment (denoted using the hash character)
+help(print)
+# or
+?print
+```
+
+Output for the help function appears under the 'Help' tab in RStudio.
+
+### 2. Data Types and Data Structures
+
+There are five basic classes or data types in R: character, integer, numeric, complex, and logical.
+
+```{r echo=TRUE, collapse=TRUE}
+# Here, we get the type of the object and then print the result.
+print( class(  "hello"  ) )   # character, double quotes preferred
+print( class(  'a'      ) )   # character, but single works too
+print( class(  1L       ) )   # integer, requires 'L'
+print( class(  1        ) )   # numeric
+print( class(  2.0      ) )   # numeric
+print( class(  1i       ) )   # complex
+print( class(  3 + 2i   ) )   # complex
+print( class(  TRUE     ) )   # logical
+
+# Also NULL
+print( class(  NULL     ) )   # NULL
+```
+
+Alongside these five classes, R also has some basic data structures: vector, list, matrix, data frame, factors, and tables.
+
+It is because of these data structures combined with how functions deal with these data structures that R is incredibly strong and useful for data manipulation and analysis. The five structures most often used are defined by their size and content types as follows:
+
+|    | Homogeneous   | Heterogeneous |
+| -- | ------------- | ------------- |
+| 1d | Atomic Vector | List          |
+| 2d | Matrix        | Data Frame    |
+| nd | Array         |               |
+
+```{r, collapse=TRUE}
+print( typeof(  c('a', 1.0, 3.14i, FALSE)  ) )   # vector
+```
+
